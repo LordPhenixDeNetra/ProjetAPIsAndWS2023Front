@@ -1,0 +1,151 @@
+﻿<Window x:Class="ProjetAPIWS2023.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetAPIWS2023"
+        xmlns:viewModel="clr-namespace:ProjetAPIWS2023.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Border Background="#111111"
+          CornerRadius="20" Cursor="Hand"
+          >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200">
+                    
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75">
+
+                </RowDefinition>
+                <RowDefinition>
+
+                </RowDefinition>
+                <RowDefinition Height="55">
+
+                </RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="COVID HELP 🆘"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="22"
+                       Foreground="White"
+                       Margin="20, 0, 0, 0"
+                       FontWeight="Bold"
+                       />
+        
+            <StackPanel Grid.Row="1"
+                        Background="#252525"
+                        >
+
+                <RadioButton Content="🏚️ Accueil"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="18"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"
+                             />
+
+                <RadioButton Content="🗺️ Carte"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="18"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding MapViewCommand}"
+                              />
+
+                <RadioButton Content="🏥 Les Centres"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="18"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ListCentreViewCommand}"
+                              />
+   
+            </StackPanel>
+
+            <TextBlock Text="@2M_DEV - All Right Reserved ©️" 
+                       Grid.Row="2"
+                       Grid.Column="2"
+                       Foreground="White"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="12"
+           
+                       />
+            
+            <RadioButton Content="❓ Nous ?"
+                         Height="50"
+                         Foreground="White"
+                         FontSize="18"
+                         Style="{StaticResource MenuButtonTheme}"
+                         Grid.Row="2"
+                          />
+
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"
+                            >
+                
+            </ContentControl>
+
+            <Grid Grid.Column="1"
+                  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition>
+                        
+                    </ColumnDefinition>
+                    <ColumnDefinition>
+
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="0"
+                     Style="{StaticResource ModernTextbox}"
+                     />
+
+                <Button  x:Name="closeAppBtn"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Margin="15"
+                            Grid.Column="1"
+                            Content="❌"
+                            Foreground="Red"
+                            FontSize="18"
+                            FontWeight="Bold"
+                            Cursor="Hand"
+                            Click="closeAppBtn_Click"
+                            Background="Transparent"
+                         
+                         />
+            </Grid>
+
+        </Grid>
+        
+    </Border>
+</Window>

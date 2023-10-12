@@ -1,0 +1,99 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Style pour les en-têtes de colonne -->
+    <Style x:Key="CustomGridViewHeaderStyle" TargetType="GridViewColumnHeader">
+        <Setter Property="Background" Value="#252525"/>
+        <!-- Couleur de fond -->
+        <Setter Property="Foreground" Value="White"/>
+        <!-- Couleur du texte -->
+        <Setter Property="BorderThickness" Value="0 0 1 0"/>
+        <!-- Bordure à droite -->
+        <Setter Property="BorderBrush" Value="#003E6B"/>
+        <!-- Couleur de la bordure -->
+        <Setter Property="Padding" Value="10"/>
+        <!-- Marge intérieure -->
+        <!-- Vous pouvez ajouter d'autres setters pour personnaliser davantage -->
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="red"/>
+                <!-- Couleur de fond en survol -->
+                <Setter Property="Foreground" Value="Black"/>
+                <!-- Couleur du texte en survol -->
+                <Setter Property="BorderThickness" Value="0 1 0 0"/>
+                <!-- Bordure inférieure en survol -->
+                <Setter Property="BorderBrush" Value="#CCCCCC"/>
+                <!-- Couleur de la bordure en survol -->
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- Style pour le contenu des cellules -->
+    <Style x:Key="CustomGridViewCellStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"/>
+        <!-- Couleur du texte -->
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <!-- Police -->
+        <Setter Property="FontSize" Value="12"/>
+        <!-- Taille de la police -->
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <!-- Alignement vertical au centre -->
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <!-- Alignement horizontal à gauche -->
+        <!-- Vous pouvez ajouter d'autres setters pour personnaliser davantage -->
+
+        <!-- 
+        
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#252525"/>
+            </Trigger>
+        </Style.Triggers>
+        
+        -->
+        
+    </Style>
+
+    <!-- Style pour les éléments ListViewItem -->
+    <Style x:Key="CustomListViewItemStyle" TargetType="ListViewItem">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <!-- Couleur de fond par défaut -->
+        <Setter Property="Foreground" Value="Black"/>
+        <!-- Couleur du texte par défaut -->
+        <Setter Property="BorderThickness" Value="0 1 0 0"/>
+        <!-- Bordure inférieure -->
+        <Setter Property="BorderBrush" Value="#DDDDDD"/>
+        <!-- Couleur de la bordure par défaut -->
+        <Setter Property="Padding" Value="5"/>
+        <!-- Marge intérieure -->
+
+        <!-- Déclencheur pour le survol -->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="red"/>
+                <!-- Couleur de fond en survol -->
+                <Setter Property="Foreground" Value="Black"/>
+                <!-- Couleur du texte en survol -->
+                <Setter Property="BorderThickness" Value="0 1 0 0"/>
+                <!-- Bordure inférieure en survol -->
+                <Setter Property="BorderBrush" Value="#CCCCCC"/>
+                <!-- Couleur de la bordure en survol -->
+
+                <Setter Property="ToolTip">
+                    <Setter.Value>
+                        <TextBlock Text="Double Cliquer pour plus &#x0a; d'information sur le centre" />
+                        
+                        <!-- Vous pouvez personnaliser le contenu de l'info-bulle ici -->
+                    </Setter.Value>
+                </Setter>
+
+
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

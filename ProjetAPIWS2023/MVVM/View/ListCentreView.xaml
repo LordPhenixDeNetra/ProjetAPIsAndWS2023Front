@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="ProjetAPIWS2023.MVVM.View.ListCentreView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             
+             xmlns:viewmodel="clr-namespace:ProjetAPIWS2023.MVVM.ViewModel" 
+             DataContext="{StaticResource ListCentreViewModel}"       
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"    
+             >
+
+    <Grid>
+        <ListView Background="#111111"  
+                  x:Name="listViewCentres"
+                  ItemsSource="{Binding ListCentres}"
+                  MouseDoubleClick="listViewCentres_MouseDoubleClick">
+            <ListView.View>
+
+                <!--
+                <GridView>
+                    
+                    <GridViewColumn Header="N0" Width="100" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Adresse Centre" Width="150" DisplayMemberBinding="{Binding AdresseCentre}" />
+                    <GridViewColumn Header="Nom Centre" Width="100" DisplayMemberBinding="{Binding NomCentre}" />
+                    <GridViewColumn Header="Contact Centre" Width="100" DisplayMemberBinding="{Binding ContactCentre}" />
+                    <GridViewColumn Header="Region Centre" Width="100" DisplayMemberBinding="{Binding RegionCentre}" />
+                    <GridViewColumn Header="Position Centre" Width="100" DisplayMemberBinding="{Binding PositionCentre}" />
+                </GridView>
+                -->
+
+                <GridView ColumnHeaderContainerStyle="{StaticResource CustomGridViewHeaderStyle}">
+                    <!-- Colonnes du GridView -->
+                    <GridViewColumn Header="N0" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource CustomGridViewCellStyle}" Text="{Binding Id}" Margin="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Adresse" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource CustomGridViewCellStyle}" Text="{Binding AdresseCentre}" Margin="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Nom" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource CustomGridViewCellStyle}" Text="{Binding NomCentre}" Margin="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Contact" Width="80">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource CustomGridViewCellStyle}" Text="{Binding ContactCentre}" Margin="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Region Centre" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource CustomGridViewCellStyle}" Text="{Binding RegionCentre}" Margin="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!--
+                    <GridViewColumn Header="Position Centre" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{StaticResource CustomGridViewCellStyle}" Text="{Binding PositionCentre}" Margin="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    -->
+                    
+                    <!-- Ajoutez d'autres colonnes ici -->
+                </GridView>
+
+            </ListView.View>
+
+            <!-- Appliquer le style aux éléments ListViewItem -->
+            <ListView.ItemContainerStyle>
+                <Style BasedOn="{StaticResource CustomListViewItemStyle}" TargetType="ListViewItem"/>
+            </ListView.ItemContainerStyle>
+
+            
+
+        </ListView>
+    </Grid>
+</UserControl>
